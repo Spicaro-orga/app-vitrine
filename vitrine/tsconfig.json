@@ -41,7 +41,7 @@
 
     // Path mappings for local libraries
     "paths": {
-      "@simplified/i18n": ["../libs/i18n/src/index.ts"],
+      "@simplified-stack/i18n": ["../libs/i18n/src/index.ts"],
       "@spicaro/common": ["../libs/ui/common/src/index.ts"],
       "@spicaro/shadcn": ["../libs/ui/shadcn/src/index.ts"],
       "@spicaro/vitrine/*": ["src/*"]
