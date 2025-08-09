@@ -1,0 +1,80 @@
+{
+  "buildCommand": "pnpm build",
+  "outputDirectory": "vitrine/dist",
+  "installCommand": "pnpm install",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/fr/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/en/",
+      "destination": "/en.html"
+    },
+    {
+      "source": "/fr/",
+      "destination": "/fr.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/en.html"
+    },
+    {
+      "source": "/fr",
+      "destination": "/fr.html"
+    },
+    {
+      "source": "/en/artwork/:id",
+      "destination": "/en/artwork/:id.html"
+    },
+    {
+      "source": "/en/artwork/:id/",
+      "destination": "/en/artwork/:id.html"
+    },
+    {
+      "source": "/fr/artwork/:id",
+      "destination": "/fr/artwork/:id.html"
+    },
+    {
+      "source": "/fr/artwork/:id/",
+      "destination": "/fr/artwork/:id.html"
+    },
+    {
+      "source": "/artwork/:id",
+      "destination": "/artwork/:id.html"
+    },
+    {
+      "source": "/artwork/:id/",
+      "destination": "/artwork/:id.html"
+    },
+    {
+      "source": "/en/:page",
+      "destination": "/en/:page.html"
+    },
+    {
+      "source": "/en/:page/",
+      "destination": "/en/:page.html"
+    },
+    {
+      "source": "/fr/:page",
+      "destination": "/fr/:page.html"
+    },
+    {
+      "source": "/fr/:page/",
+      "destination": "/fr/:page.html"
+    },
+    {
+      "source": "/:page",
+      "destination": "/:page.html"
+    },
+    {
+      "source": "/:page/",
+      "destination": "/:page.html"
+    }
+  ]
+}

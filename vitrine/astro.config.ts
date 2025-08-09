@@ -2,6 +2,7 @@ import tailwind from '@astrojs/tailwind'
 import { env } from 'process'
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
+import vercel from '@astrojs/vercel'
 
 import { filterSitemapByDefaultLocale, i18n } from 'astro-i18n-aut/integration'
 import jopSoftwarecookieconsent from '@jop-software/astro-cookieconsent'
@@ -33,6 +34,7 @@ export default defineConfig({
   },
 
   output: 'static',
+  adapter: vercel(),
   integrations: [
     react(),
     tailwind({
