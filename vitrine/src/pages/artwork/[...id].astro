@@ -1,0 +1,31 @@
+---
+import Layout from '@spicaro/vitrine/layouts/Layout.astro'
+import artwoks from '../_artwork.json'
+export function getStaticPaths() {
+  return artwoks.map((artwork) => ({
+    params: { id: `${artwork.id}` },
+  }))
+}
+
+const { id }: { id: string } = Astro.params
+const index = Number(id) - 1
+---
+
+<Layout title={artwoks[index].title}>
+  <section
+    class="mx-auto flex w-full flex-col items-center gap-4 px-8 py-16 md:max-w-5xl"
+  >
+    <h1 class="font-heading text-3xl font-bold">{artwoks[index].title}</h1>
+    <span class="text-sm italic text-gray-100"
+      >{artwoks[index].artist + ' ' + artwoks[index].year}</span
+    >
+
+    <p class="text-center">{artwoks[index].description}</p>
+
+    <img
+      src={artwoks[index].image}
+      alt={artwoks[index].title}
+      class="md:w-6/12"
+    />
+  </section>
+</Layout>

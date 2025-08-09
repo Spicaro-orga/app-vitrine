@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="mob_menu_open" transform="translate(-315 -53)">
+    <path id="Rectangle_31" data-name="Rectangle 31" d="M20,1a19.005,19.005,0,0,0-7.4,36.507A19.005,19.005,0,0,0,27.4,2.493,18.88,18.88,0,0,0,20,1m0-1A20,20,0,1,1,0,20,20,20,0,0,1,20,0Z" transform="translate(315 53)" fill="#fff"/>
+    <path id="Ligne_20" data-name="Ligne 20" d="M16,.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H16a.5.5,0,0,1,.5.5A.5.5,0,0,1,16,.5Z" transform="translate(327 69)" fill="#fff"/>
+    <path id="Ligne_21" data-name="Ligne 21" d="M16,.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H16a.5.5,0,0,1,.5.5A.5.5,0,0,1,16,.5Z" transform="translate(327 73)" fill="#fff"/>
+    <path id="Ligne_22" data-name="Ligne 22" d="M16,.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H16a.5.5,0,0,1,.5.5A.5.5,0,0,1,16,.5Z" transform="translate(327 77)" fill="#fff"/>
+  </g>
+</svg>

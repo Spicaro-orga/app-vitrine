@@ -1,0 +1,76 @@
+# Here is better organized gitignore, with clear parts and regex
+# instead of 5 lines for each type of files
+
+# compiled output
+dist
+tmp
+/out-tsc
+*.tfstate
+*.tfstate.backup
+.terraform/
+jwt_profile.json
+# dependencies
+node_modules
+**/test.tfvars
+
+# ides and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# ide - vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+backend-api.log
+backend-api.json
+
+# system files
+.ds_store
+thumbs.db
+
+.nx/cache
+.nx/workspace-data
+.astro
+*/**/.env*
+*/**/env*
+.nyc_output
+*/**/test-results
+casdoor/postgres
+!apps/artgallery-front/env.sh
+!apps/front/env.sh
+
+#config files
+apps/backend/config/casdoor-config.yaml
+**/env-config.js
+**/astro_tmp_pages*
+**/vite.config.mts.timestamp-*
+.npmrc
+**/vite.config.mts.timestamp*
+**/.scannerwork/**
+
+**/uploads/*.png
+**/uploads/*.jpg
+**/uploads/*.jpeg
+**/uploads/*.hdri
+**/uploads/*.gltf
+
+apps/front/coverage
+policy.json
+routing-rules.json

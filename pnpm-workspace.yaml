@@ -1,0 +1,5 @@
+packages:
+  - 'vitrine'
+  - 'libs/i18n'
+  - 'libs/ui/common'
+  - 'libs/ui/shadcn'

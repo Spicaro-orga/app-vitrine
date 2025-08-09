@@ -1,0 +1,93 @@
+{
+  "name": "vitrine",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/vitrine/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "mv package.json package-temp.json && astro build && mv package-temp.json package.json",
+        "cwd": "apps/vitrine"
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "astro dev",
+        "cwd": "apps/vitrine"
+      }
+    },
+    "preview": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "astro preview",
+        "cwd": "apps/vitrine"
+      }
+    },
+    "check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "astro check",
+        "cwd": "apps/vitrine"
+      }
+    },
+    "sync": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "astro sync",
+        "cwd": "apps/vitrine"
+      }
+    },
+    "sonar-scan": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "sonar-scanner",
+        "cwd": "apps/vitrine"
+      }
+    },
+    "container": {
+      "executor": "@nx-tools/nx-container:build",
+      "dependsOn": ["build"],
+      "options": {
+        "metadata": {
+          "images": ["ghcr.io/simplifi-ed/{projectName}"],
+          "tags": ["type=match,pattern=\\d.\\d*.\\d*"]
+        }
+      }
+    },
+    "container:manual": {
+      "executor": "@nx-tools/nx-container:build",
+      "dependsOn": ["build"],
+      "options": {
+        "metadata": {
+          "images": ["ghcr.io/simplifi-ed/{projectName}"],
+          "tags": [
+            "type=raw,value={{ branch }}-{{ date 'YYYYMMDD-HHmmss' tz='Europe/Paris' }},enable=true"
+          ]
+        }
+      }
+    },
+    "container:pr": {
+      "executor": "@nx-tools/nx-container:build",
+      "dependsOn": ["build"],
+      "options": {
+        "metadata": {
+          "images": ["ghcr.io/simplifi-ed/{projectName}"],
+          "tags": [
+            "type=raw,value=pull-{{ date 'YYYYMMDD-HHmmss' tz='Europe/Paris' }},enable=true"
+          ]
+        }
+      }
+    },
+    "sonar": {
+      "executor": "@koliveira15/nx-sonarqube:scan",
+      "options": {
+        "hostUrl": "http://sonarqube.simplified.loc",
+        "projectKey": "spicaro-vitrine"
+      }
+    }
+  }
+}

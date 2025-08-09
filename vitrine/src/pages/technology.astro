@@ -1,0 +1,190 @@
+---
+import ImageShadow from '../components/common/ImageShadow.astro'
+import Layout from '../layouts/Layout.astro'
+
+import SectionWithTitle00 from '../components/common/SectionWithTitle00.astro'
+import { useTranslations } from '../i18n/translator'
+import { getLocale } from 'astro-i18n-aut'
+import TitleWithUnderline from '../components/common/TitleWithUnderline.astro'
+const locale = getLocale(Astro.url)
+const { t, tList } = useTranslations(locale)
+---
+
+<Layout title="Spicaro">
+  <main class="flex flex-col">
+    <header class="relative mx-auto overflow-hidden">
+      <ImageShadow>
+        <!-- the image -->
+        <img
+          src="/techpage/techno_visuel.jpg"
+          alt="Golden Flowers"
+          loading="lazy"
+          decoding="async"
+          width="1920"
+          height="1080"
+          class="w-fit md:h-[28rem]"
+        />
+      </ImageShadow>
+      <SectionWithTitle00 title={t('technology.title')}>
+        <p slot="left-text" set:html={t('technology.description')} />
+      </SectionWithTitle00>
+    </header>
+
+    <!-- section 01 -->
+    <section class="container mx-auto p-4 px-8 pt-8 md:px-0">
+      <div
+        aria-labelledby="benefits-heading"
+        class="flex flex-col gap-4 md:pt-40"
+      >
+        <TitleWithUnderline
+          title={t('technology.artwork.title')}
+          number="01"
+          center={true}
+          width="md:max-w-[30ch]"
+          variant="h2"
+          size="md:text-5xl text-4xl"
+        />
+      </div>
+      <div
+        class="mx-auto grid gap-4 py-5 font-sans text-white md:grid-cols-4 md:p-5 md:px-2"
+      >
+        <!-- showing the items on the image sides in desktop -->
+        <div
+          class="hidden w-full justify-around gap-4 text-sm md:flex md:flex-col md:items-end md:px-10 landscape:md:px-0"
+        >
+          <p class="basis-1/2 md:mb-4 md:w-[18ch] md:basis-0 md:text-right">
+            {t('technology.artwork.photography')}
+          </p>
+
+          <div
+            class="flex h-full basis-1/2 md:mt-4 md:max-h-fit md:basis-0 md:flex-col md:items-end"
+          >
+            <img
+              src="/techpage/tech_poincon.jpg"
+              alt="Poinçon infalsifiable"
+              class="mr-2 h-12 w-12"
+            />
+            <p class="md:max-w-[15ch] md:text-right">
+              {t('technology.artwork.digitalTwin')}
+            </p>
+          </div>
+        </div>
+
+        <div class="col-span-2 h-full">
+          <img src="/techpage/tech_oeuvre.jpg" alt="Artwork" class="" />
+        </div>
+
+        <!-- Showing the items as a list under the image in mobile -->
+        <div
+          class="col-span-2 flex w-full flex-col items-center justify-center pt-4 md:hidden xl:px-24"
+        >
+          {
+            tList('technology.artwork.items').map((item) => (
+              <div class="mb-4 w-full">
+                <div class="flex gap-2">
+                  <img
+                    src="/icons/com_next_off.svg"
+                    alt="com_next_off"
+                    class="h-8 w-8"
+                  />
+                  <p class="md:text-lg" set:html={item} />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- showing the items on the image sides in desktop -->
+        <div
+          class="hidden w-full justify-around gap-4 text-sm md:flex md:flex-col md:px-10 landscape:md:px-0"
+        >
+          <p class="mb-4 md:max-w-[18ch]">
+            {t('technology.artwork.analysis')}
+          </p>
+          <p class="md:max-w-[18ch]">
+            {t('technology.artwork.uvLight')}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 02 -->
+    <section class="container mx-auto p-4 px-8 pt-8 md:px-0">
+      <TitleWithUnderline
+        title={t('technology.platform.title')}
+        number="02"
+        center={true}
+        width="md:max-w-[30ch]"
+        variant="h2"
+        size="md:text-5xl text-4xl"
+        centerMobile={true}
+      />
+
+      <div class="grid gap-4 py-4 md:grid-cols-2 md:py-12">
+        <div
+          class="order-1 flex w-full flex-col items-center justify-center p-4 md:-order-1"
+        >
+          {
+            tList('technology.platform.items').map((item) => (
+              <div class="mb-4 w-full">
+                <div class="flex gap-2">
+                  <img
+                    src="/icons/com_next_off.svg"
+                    alt="com_next_off"
+                    class="h-8 w-8"
+                  />
+                  <p class="md:text-lg" set:html={item} />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="relative flex w-full items-center md:order-1">
+          <img
+            src="/techpage/mac-pro.png"
+            alt="Laptop"
+            class="shadow-white drop-shadow-xl"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- section 03 -->
+    <section class="container mx-auto p-4 px-8 pt-8 md:px-0">
+      <TitleWithUnderline
+        title={t('technology.experience.title')}
+        number="03"
+        center={true}
+        width="md:max-w-[30ch]"
+        variant="h2"
+        size="md:text-5xl text-4xl"
+        centerMobile={true}
+      />
+
+      <div class="grid items-center gap-4 py-4 md:grid-cols-2 md:py-12">
+        <div class="relative flex w-full items-center justify-center">
+          <img src="/techpage/pad.png" alt="" />
+        </div>
+        <div
+          class="flex h-full w-full flex-col items-center justify-center p-4 xl:px-24"
+        >
+          {
+            tList('technology.experience.items').map((item) => (
+              <div class="mb-4 w-full">
+                <div class="flex gap-2">
+                  <img
+                    src="/icons/com_next_off.svg"
+                    alt="com_next_off"
+                    class="h-8 w-8"
+                  />
+                  <p class="md:text-lg" set:html={item} />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

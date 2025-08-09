@@ -1,0 +1,62 @@
+---
+import { getLocale } from 'astro-i18n-aut'
+import { useTranslations } from '../i18n/translator'
+import Layout from '../layouts/Layout.astro'
+
+const locale = getLocale(Astro.url)
+const { t } = useTranslations(locale)
+---
+
+<Layout title="Spicaro">
+  <main class="container mx-auto px-4 py-8">
+    <section>
+      <h1 class="mb-4 text-2xl font-bold">{t('legal.identification.title')}</h1>
+      <p>{t('legal.identification.companyName')}</p>
+      <p>{t('legal.identification.legalForm')}</p>
+      <p>{t('legal.identification.siret')}</p>
+      <p>{t('legal.identification.headquarters')}</p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="mb-4 text-xl font-bold">{t('legal.siteEditor.title')}</h2>
+      <p>{t('legal.siteEditor.description')}</p>
+      <p>{t('legal.siteEditor.company')}</p>
+      <p>{t('legal.siteEditor.registration')}</p>
+      <p>{t('legal.siteEditor.address')}</p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="mb-4 text-xl font-bold">{t('legal.hosting.title')}</h2>
+      <p>{t('legal.hosting.provider')}</p>
+      <p>{t('legal.hosting.address')}</p>
+      <p>
+        <a
+          href={t('legal.hosting.website').split(': ')[1]}
+          class="text-blue-500 underline"
+          target="_blank"
+        >
+          {t('legal.hosting.website')}
+        </a>
+      </p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="mb-4 text-xl font-bold">{t('legal.dataProtection.title')}</h2>
+      <p>{t('legal.dataProtection.description')}</p>
+      <p>{t('legal.dataProtection.privacyPolicy')}</p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="mb-4 text-xl font-bold">
+        {t('legal.intellectualProperty.title')}
+      </h2>
+      <p>{t('legal.intellectualProperty.description')}</p>
+      <p>{t('legal.intellectualProperty.mediaProtection')}</p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="mb-4 text-xl font-bold">{t('legal.liabilities.title')}</h2>
+      <p>{t('legal.liabilities.description')}</p>
+    </section>
+  </main>
+</Layout>

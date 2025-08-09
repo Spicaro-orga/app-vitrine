@@ -1,0 +1,37 @@
+---
+type Props = {
+  title: string
+  number?: string
+  center?: boolean
+  size?: string
+  width?: string
+  variant?: string
+  centerMobile?: boolean
+}
+const {
+  title,
+  number,
+  center = true,
+  size = 'text-5xl',
+  width,
+  variant = 'h1',
+  centerMobile = false,
+} = Astro.props as Props
+const HeadingTag = variant as keyof JSX.IntrinsicElements
+---
+
+<span
+  class=`text-4xl text-[#4D4D4D] pb-0 ${center ? 'md:text-center md:w-full md:block' : 'md:text-left'} ${centerMobile ? 'text-center w-full block' : 'text-left'}`
+>
+  {number}
+</span>
+<HeadingTag
+  id="heading"
+  class=`font-heading pb-2 ${centerMobile ? 'text-center' : ''} ${center ? 'md:text-center md:w-full md:mx-auto' : 'md:text-left'} ${size} ${width} `
+>
+  {title}
+</HeadingTag>
+<div
+  class=`w-16 border-b border-[#4d4d4d] mb-4 ${center ? 'md:mx-auto': 'md:mx-0'} ${centerMobile ? 'mx-auto': 'mx-0'}`
+>
+</div>

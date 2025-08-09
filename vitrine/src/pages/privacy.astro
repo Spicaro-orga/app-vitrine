@@ -1,0 +1,103 @@
+---
+import { getLocale } from 'astro-i18n-aut'
+import { useTranslations } from '../i18n/translator'
+import Layout from '../layouts/Layout.astro'
+
+const locale = getLocale(Astro.url)
+const { t, l, tList } = useTranslations(locale)
+---
+
+<Layout title={t('privacyPolicy.title')}>
+  <main class="container mx-auto flex flex-col gap-4 py-4 px-4 sm:px-6 lg:px-8">
+    <section class="flex flex-col gap-4">
+      <h1 class="text-center font-heading text-3xl font-bold">
+        {t('privacyPolicy.title')}
+      </h1>
+
+      <h2 class="font-heading text-xl font-semibold">
+        {t('privacyPolicy.introduction.title')}
+      </h2>
+      <p>{t('privacyPolicy.introduction.content')}</p>
+
+      <h2 class="font-heading text-xl font-semibold">
+        {t('privacyPolicy.dataCollected.title')}
+      </h2>
+      <p>{t('privacyPolicy.dataCollected.content')}</p>
+      <ul class="list-disc pl-5">
+        {
+          tList('privacyPolicy.dataCollected.details').map((detail) => (
+            <li>{detail}</li>
+          ))
+        }
+      </ul>
+
+      <h2 class="font-heading text-xl font-semibold">
+        {t('privacyPolicy.dataUsage.title')}
+      </h2>
+      <p>{t('privacyPolicy.dataUsage.content')}</p>
+      <ul class="list-disc pl-5">
+        {
+          tList('privacyPolicy.dataUsage.details').map((detail) => (
+            <li>{detail}</li>
+          ))
+        }
+      </ul>
+
+      <h2 class="font-heading text-xl font-semibold">
+        {t('privacyPolicy.dataSharing.title')}
+      </h2>
+      <p>{t('privacyPolicy.dataSharing.content')}</p>
+      <ul class="list-disc pl-5">
+        {
+          tList('privacyPolicy.dataSharing.details').map((detail) => (
+            <li>{detail}</li>
+          ))
+        }
+      </ul>
+
+      <h2 class="font-heading text-xl font-semibold">
+        {t('privacyPolicy.dataSecurity.title')}
+      </h2>
+      <p>{t('privacyPolicy.dataSecurity.content')}</p>
+
+      <h2 class="font-heading text-xl font-semibold">
+        {t('privacyPolicy.dataRetention.title')}
+      </h2>
+      <p>{t('privacyPolicy.dataRetention.content')}</p>
+
+      <h2 class="font-heading text-xl font-semibold">
+        {t('privacyPolicy.yourRights.title')}
+      </h2>
+      <p>{t('privacyPolicy.yourRights.content')}</p>
+      <ul class="list-disc pl-5">
+        {
+          tList('privacyPolicy.yourRights.rights').map((right) => (
+            <li>{right}</li>
+          ))
+        }
+      </ul>
+      <p>{t('privacyPolicy.yourRights.contact')}</p>
+
+      <h2 class="font-heading text-xl font-semibold">
+        {t('privacyPolicy.policyChanges.title')}
+      </h2>
+      <p>{t('privacyPolicy.policyChanges.content')}</p>
+      <div class="flex flex-col gap-4">
+        <h2 class="font-heading text-xl font-semibold">
+          {t('privacyPolicy.contact.title')}
+        </h2>
+        <p>{t('privacyPolicy.contact.content')}</p>
+        <div class="flex w-full flex-col justify-center gap-4 md:flex-row">
+          <a href={l('contact')} class="font-bold underline"
+            >{t('privacyPolicy.contact.company')}</a
+          >
+          <p class="font-bold">{t('privacyPolicy.contact.address')}</p>
+          <a
+            href={`mailto:${t('privacyPolicy.contact.email')}`}
+            class="font-bold underline">{t('privacyPolicy.contact.email')}</a
+          >
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

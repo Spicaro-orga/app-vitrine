@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: vitrine
+  description: 'Auto-generated catalog-info for vitrine'
+  tags: []
+spec:
+  type: services
+  owner: guests
+  lifecycle: production

@@ -1,0 +1,49 @@
+---
+import MdiLinkedin from '../../icons/MdiLinkedin.astro'
+import MdiInstagram from '../../icons/MdiInstagram.astro'
+
+import { useTranslations } from '../../i18n/translator'
+import { getLocale } from 'astro-i18n-aut'
+
+const locale = getLocale(Astro.url)
+
+const { t, l } = useTranslations(locale)
+
+const { className } = Astro.props
+---
+
+<footer
+  class={className ??
+    'hidden md:flex w-full flex-col md:flex-row items-center gap-4 p-4 md:items-start md:self-end md:p-0 md:pb-16 md:pl-16'}
+>
+  <div class="flex gap-4">
+    <a
+      href="https://www.linkedin.com/company/spicaro/"
+      aria-label="LinkedIn"
+      class="flex items-center justify-center hover:underline"
+      ><img
+        src="/icons/footer_in_off.svg"
+        alt="linkedin"
+        class="mb-1 h-3 w-3"
+      /></a
+    >
+    <a
+      href="https://www.instagram.com/spicaro_art?igsh=cXFtbG8yODQyYXM4"
+      aria-label="Instagram"
+      class="flex items-center justify-center hover:underline"
+      ><img
+        src="/icons/footer_ist_off.svg"
+        alt="instagram"
+        class="h-3 w-3"
+      /></a
+    >
+  </div>
+  <div
+    class="flex flex-col items-center gap-2 text-xs text-gray-100 md:flex-row md:items-start"
+  >
+    <a href={l("/legal-mentions")} class="hover:underline"
+      >{t('footer.legalMentions')}</a
+    >
+    <a href={l("/privacy")} class="hover:underline">{t('footer.privacy')}</a>
+  </div>
+</footer>

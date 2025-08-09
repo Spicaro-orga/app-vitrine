@@ -1,0 +1,45 @@
+---
+import {
+  Pagination as PaginationPrimitive,
+  PaginationLink,
+  PaginationItem,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationPrevious,
+  PaginationNext,
+} from '@spicaro/shadcn'
+---
+
+<PaginationPrimitive>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious
+        href="#"
+        className="flex h-12 w-12 items-center justify-center rounded-full border"
+      />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#">1</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#" isActive className="rounded-full">
+        2
+      </PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#">3</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#">10</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext
+        href="#"
+        className="flex h-12 w-12 items-center justify-center rounded-full border"
+      />
+    </PaginationItem>
+  </PaginationContent>
+</PaginationPrimitive>

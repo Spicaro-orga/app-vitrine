@@ -1,0 +1,30 @@
+---
+import TitleWithUnderline from './TitleWithUnderline.astro'
+const { title } = Astro.props
+---
+
+<section
+  aria-labelledby="digitalisation-heading"
+  class="mx-auto flex w-full p-4 py-0 md:px-14 md:pb-8"
+>
+  <!-- the text -->
+  <article class="flex flex-col py-0 md:px-4">
+    <TitleWithUnderline
+      title={title}
+      variant="h1"
+      number="00"
+      size="md:text-5xl text-6xl"
+      center={false}
+      centerMobile={true}
+    />
+
+    <main class="grid grid-cols-1 gap-10 md:grid-cols-2">
+      <section class="text-center md:text-left">
+        <slot name="left-text" />
+      </section>
+      <section class="text-center md:text-left">
+        <slot name="right-text" />
+      </section>
+    </main>
+  </article>
+</section>

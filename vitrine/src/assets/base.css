@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    font-size: clamp(1rem, 1vw, 8rem);
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-BoldItalic.ttf')
+      format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-LightItalic.ttf')
+      format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-MediumItalic.ttf')
+      format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-SemiBoldItalic.ttf')
+      format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-ExtraBold.ttf')
+      format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/static/OpenSans-ExtraBoldItalic.ttf')
+      format('truetype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'PT Serif';
+    src: url('/fonts/PT_Serif/PTSerif-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'PT Serif';
+    src: url('/fonts/PT_Serif/PTSerif-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'PT Serif';
+    src: url('/fonts/PT_Serif/PTSerif-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'PT Serif';
+    src: url('/fonts/PT_Serif/PTSerif-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+
+    --color-primary: 13, 94, 72;
+    --color-secondary: 27, 177, 122;
+    --color-accent: 132, 199, 44;
+    --color-text-heading: 7, 44, 44;
+    --color-text-default: 16, 16, 16;
+    --color-text-muted: 16, 16, 16, 0.66;
+    --color-bg-page: 255, 255, 255;
+    --color-bg-page-dark: 0, 21, 36;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 16.9%;
+
+    --color-primary: 60, 185, 185;
+    --color-secondary: 5, 72, 72;
+    --color-accent: 56, 56, 224;
+    --color-text-heading: 211, 248, 248;
+    --color-text-default: 229, 236, 246;
+    --color-text-muted: 229, 236, 246, 0.66;
+    --color-bg-page: var(--color-bg-page-dark);
+  }
+
+  #cc-main .cm {
+    box-shadow: 0 0.625em 1.875em rgb(255 255 253 / 70%);
+  }
+
+  #cc-main .pm__section-title {
+    background-color: white;
+    border-color: black;
+    color: black;
+  }
+
+  #cc-main .pm__section-title:hover {
+    background-color: white;
+    border-color: white;
+    color: black;
+  }
+
+  #cc-main {
+    --cc-bg: black;
+
+    /** Change font **/
+    --cc-font-family: 'Open Sans', sans-serif;
+    --cc-modal-border-radius: 0.5rem;
+    --cc-primary-color: white;
+    --cc-secondary-color: rgb(215, 215, 215);
+
+    /** Change button primary color to black **/
+    --cc-btn-primary-bg: black;
+    --cc-btn-primary-color: white;
+    --cc-btn-primary-hover-color: black;
+    --cc-btn-primary-border-color: white;
+    --cc-btn-primary-hover-bg: white;
+    --cc-btn-primary-hover-border-color: rgb(215, 215, 215);
+    --cc-btn-primary-color: white;
+    --cc-separator-border-color: white;
+
+    --cc-btn-secondary-bg: white;
+    --cc-btn-secondary-color: black;
+    --cc-btn-secondary-hover-color: white;
+    --cc-btn-secondary-border-color: rgb(215, 215, 215);
+    --cc-btn-secondary-hover-bg: black;
+    --cc-btn-secondary-hover-border-color: rgb(215, 215, 215);
+    --cc-btn-secondary-color: black;
+
+    /** Also make toggles the same color as the button **/
+    --cc-toggle-on-bg: rgb(215, 215, 215);
+
+    /** Make the buttons a bit rounder **/
+    --cc-btn-border-radius: 10px;
+  }
+}

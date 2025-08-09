@@ -1,0 +1,85 @@
+---
+import { Burger, LangSwitcher, Nav } from '@spicaro/common'
+import { useTranslations } from '@spicaro/vitrine/i18n/translator'
+import MdiUser from '@spicaro/vitrine/icons/MdiUser.astro'
+import type { LinkType } from '@spicaro/vitrine/types'
+import { defaultLocale, getLocale, localeKeys as locales } from 'astro-i18n-aut'
+import Logo from './Logo.astro'
+import Footer from './Footer.astro'
+const locale = getLocale(Astro.url)
+
+const { t, l, tList } = useTranslations(locale)
+const navLinks = (tList('navbar.links') as LinkType[]).map((navLink) => ({
+  ...navLink,
+  link: l(navLink.link),
+}))
+
+const frontUrl = import.meta.env.VITE_FRONT_URL || 'https://app.spicaro.fr'
+---
+
+<header
+  class="flex max-h-32 w-full items-center justify-between px-4 py-4 sm:px-8 md:justify-start"
+>
+  <Logo homeLink={l('/')} />
+  <!-- md screens nav bar -->
+  <div class="hidden w-full justify-end gap-4 text-sm md:flex">
+    {
+      navLinks.length > 0 && (
+        <Nav navLinks={[...navLinks.slice(1)]} client:load />
+      )
+    }
+
+    <LangSwitcher
+      trailingSlash={import.meta.env['VITE_SITE_TRAILING_SLASH']}
+      locales={locales}
+      currentLocale={locale}
+      defaultLocale={defaultLocale}
+      client:only="react"
+    />
+    <a
+      href="https://app.spicaro.fr"
+      class="flex items-center gap-2 rounded-full border px-4 py-1"
+      aria-label={t('navbar.login')}
+    >
+      <MdiUser />
+      {t('navbar.login')}
+    </a>
+  </div>
+
+  <!-- mobile screens nav bar -->
+  <div class="flex items-center gap-4 self-end md:hidden">
+    <LangSwitcher
+      trailingSlash={import.meta.env['VITE_SITE_TRAILING_SLASH']}
+      locales={locales}
+      currentLocale={locale}
+      defaultLocale={defaultLocale}
+      client:only="react"
+    />
+    <Burger client:only="react">
+      <menu class="flex h-[calc(100dvh-9rem)] flex-col">
+        <header class="w-full p-4 pb-8 text-center font-heading text-5xl">
+          Menu
+        </header>
+
+        <Nav
+          navLinks={navLinks}
+          listStylesClass="flex flex-col items-center gap-8 md:hidden py-4 overflow-y-auto"
+          client:load
+        >
+          <a
+            href={l(frontUrl)}
+            class="flex items-center gap-2 rounded-full border bg-transparent px-4 py-1"
+            aria-label={t('navbar.login')}
+          >
+            <MdiUser />
+            {t('navbar.login')}
+          </a>
+        </Nav>
+
+        <Footer
+          className="mt-auto flex w-full flex-col items-center gap-2 bg-black pb-4"
+        />
+      </menu>
+    </Burger>
+  </div>
+</header>

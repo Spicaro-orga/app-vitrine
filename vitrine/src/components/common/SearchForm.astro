@@ -1,0 +1,123 @@
+---
+import MaterialSymbolsSearch from '../../icons/MaterialSymbolsSearch.astro'
+import { useTranslations } from '../../i18n/translator'
+import { getLocale } from 'astro-i18n-aut'
+import artworks from '../../pages/_artwork.json'
+
+const locale = getLocale(Astro.url)
+const { t } = useTranslations(locale)
+---
+
+<form class="relative w-full max-w-md text-sm md:text-base">
+  <span
+    class="absolute left-6 top-1/2 -translate-x-1/2 -translate-y-1/2 transform border-r p-1 pr-2"
+  >
+    <MaterialSymbolsSearch class="h-4 w-4" />
+  </span>
+  <label for="search" class="sr-only">
+    {t('home.search')}
+  </label>
+  <input
+    type="search"
+    id="search"
+    class="w-full rounded-full border bg-black p-2 pl-14 outline-none"
+    placeholder={t('home.search') + '...'}
+    autocomplete="off"
+  />
+
+  <ul
+    id="suggestions"
+    class="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded bg-black shadow shadow-white"
+  >
+  </ul>
+</form>
+
+<script define:vars={{ artworks }} is:inline>
+  let currentFocus = -1 // To track the currently focused suggestion
+
+  const createArtworkUrl = (artwork) => `/artwork/${artwork.id}`
+
+  const onSearch = (e) => {
+    const query = e.target.value.toLowerCase() // Get the current input value
+    const suggestions = artworks.filter(
+      (artwork) =>
+        artwork.title.toLowerCase().includes(query) || // Filter artworks by title
+        artwork.artist.toLowerCase().includes(query), // or artist name
+    )
+
+    const suggestionsList = document.getElementById('suggestions') // Reference to suggestions list
+    if (!suggestionsList) return // Exit if suggestions list is not found
+    suggestionsList.innerHTML = '' // Clear previous suggestions
+
+    if (query && suggestions.length > 0) {
+      suggestions.forEach((artwork, index) => {
+        const li = document.createElement('li') // Create list item
+        li.className = 'p-2 cursor-pointer flex items-center' // Default styling
+
+        // Create an anchor element for each suggestion
+        const anchor = document.createElement('a')
+        anchor.href = createArtworkUrl(artwork) // Set the href to the artwork URL
+        anchor.className = 'flex items-center w-full' // Full width for anchor
+
+        // Create the image and text content for the suggestion
+        anchor.innerHTML = `<img src="${artwork.image}" alt="${artwork.title}" class="w-10 h-10 mr-2 object-cover inline-block" /> ${artwork.title} by ${artwork.artist}`
+
+        // Append the anchor to the list item
+        li.appendChild(anchor)
+        suggestionsList.appendChild(li) // Append the list item to the suggestions list
+
+        // Add event listener for mouse hover to highlight suggestions
+        li.addEventListener('mouseenter', () => {
+          currentFocus = index // Update currentFocus on hover
+          highlightSuggestion(suggestionsList.children) // Highlight the focused suggestion
+        })
+
+        li.addEventListener('mouseleave', () => {
+          currentFocus = -1 // Reset currentFocus when mouse leaves
+          highlightSuggestion(suggestionsList.children) // Remove highlight
+        })
+      })
+    }
+  }
+
+  // Function to highlight the currently focused suggestion
+  const highlightSuggestion = (items) => {
+    for (let i = 0; i < items.length; i++) {
+      items[i].classList.remove('bg-blue-500', 'text-white') // Remove active highlight classes
+      items[i].classList.add('bg-black', 'text-gray-300') // Default styles for non-active items
+    }
+    if (currentFocus >= 0 && currentFocus < items.length) {
+      items[currentFocus].classList.add('bg-blue-500', 'text-white') // Add active highlight classes
+      items[currentFocus].classList.remove('bg-black', 'text-gray-300') // Remove default styles for active item
+    }
+  }
+
+  // Event listener for input to handle searching
+  document.getElementById('search').addEventListener('input', onSearch)
+
+  // Event listener for keydown to handle keyboard navigation
+  document.getElementById('search').addEventListener('keydown', function (e) {
+    const suggestionsList = document.getElementById('suggestions') // Reference to suggestions list
+    const items = suggestionsList.getElementsByTagName('li') // Get all suggestion items
+
+    // Handle arrow down key
+    if (e.key === 'ArrowDown') {
+      currentFocus++ // Move focus down
+      highlightSuggestion(items) // Highlight the new focus
+      e.preventDefault() // Prevent default scroll behavior
+    }
+    // Handle arrow up key
+    else if (e.key === 'ArrowUp') {
+      currentFocus-- // Move focus up
+      highlightSuggestion(items) // Highlight the new focus
+      e.preventDefault() // Prevent default scroll behavior
+    }
+    // Handle enter key
+    else if (e.key === 'Enter') {
+      if (currentFocus > -1) {
+        const selectedArtwork = artworks[currentFocus] // Get the selected artwork
+        window.location.href = createArtworkUrl(selectedArtwork) // Navigate directly to the artwork URL
+      }
+    }
+  })
+</script>

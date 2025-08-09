@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: shadcn
+  description: 'Auto-generated catalog-info for shadcn'
+  tags: []
+spec:
+  type: components
+  owner: guests
+  lifecycle: production

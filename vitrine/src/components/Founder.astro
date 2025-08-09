@@ -1,0 +1,24 @@
+---
+const { image, firstName, lastName } = Astro.props
+---
+
+<div class="flex flex-col gap-8 py-4 md:pt-16">
+  <div class="flex flex-col items-center md:flex-row">
+    <div
+      class={`flex justify-center basis-2/6 w-full min-h-full ${image.side === 'right' ? 'md:order-last' : 'md:order-first'}`}
+    >
+      <img
+        src={image.src}
+        alt={image.alt}
+        class={`md:h-full object-cover w-3/5 md:w-9/12 object-top rounded pb-8 order-first ${image.side === 'right' ? 'md:order-last' : 'md:order-first'}`}
+      />
+    </div>
+    <div class="grid h-fit basis-4/6 gap-4 px-4 md:grid-cols-2">
+      <h3 class="auto-rows-min pb-2 md:col-span-2">
+        <span class="font-heading text-4xl">{lastName}</span>
+        <span class="font-heading text-xl">{firstName} </span>
+      </h3>
+      <slot />
+    </div>
+  </div>
+</div>

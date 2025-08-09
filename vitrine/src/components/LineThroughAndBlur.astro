@@ -1,0 +1,13 @@
+---
+type Pros = {
+  left?: string
+}
+const { left = 'md:left-[12.5rem]' } = Astro.props
+---
+
+<!-- md:left-[12.5rem] --><!-- md:left-[18.5rem] -->
+<div
+  class=`transfrom borde-none absolute left-[5.5rem] z-10 h-[50rem] w-[50rem] rotate-[30deg] ${left}`
+>
+  <div class="h-[50rem] w-[50rem] border-l backdrop-blur-[0.25rem]"></div>
+</div>

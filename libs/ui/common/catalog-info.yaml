@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: common
+  description: 'Auto-generated catalog-info for common'
+  tags: []
+spec:
+  type: components
+  owner: guests
+  lifecycle: production
