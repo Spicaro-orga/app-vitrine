@@ -4,26 +4,23 @@ const company = {
   title: 'Nous digitalisons vos œuvres d’Art',
   description: {
     part1:
-      'Spicaro est un service d’accompagnement auprès des propriétaires d’œuvres d’Art. ',
-    part2: 'Nous digitalisons en très haute définition les œuvres',
+      'Spicaro est un service d’accompagnement auprès des collectionneurs d’œuvres d’Art. ',
+    part2: 'Nous digitalisons en haute définition les œuvres',
     part3:
-      ' et fournissons un jumeau numérique. Chaque œuvre physique est associée à son jumeau numérique.',
+      ' et fournissons un jumeau numérique dans lequel nous intégrons toute la documentation inhérente à l’œuvre : certificats, restaurations, lieux d’expositions, preuves de propriété, histoire de l’œuvre.',
     part4:
-      'Dans le but que les restaurations, les lieux d’exposition, l’histoire de l’œuvre, l’œuvre elle-même et le contexte soient intégrés au sein de ',
-    part5: 'la ligne de vie digitale de l’œuvre.',
+      ' Chaque oeuvre d’Art est représentée par une copie numérique unique et sécurisée, permettant d'assurer  ',
+    part5: 'sa traçabilité et sa propriété.',
   },
   title01:
-    'Avec Spicaro, profitez de votre collection au creux de votre main, où que vous soyez.',
+    'Avec Spicaro, ayez votre collection toujours à portée de main et créez vos expositions au sein d’une galerie 3D.',
   description01: {
     part1:
       'En tant que collectionneur d’Art, vous êtes confronté à différentes problématiques pour la gestion efficace de vos œuvres. La représentation de votre collection, leur transmission et leur assurance. Découvrir une manière continue, innovante et haut de gamme pour optimiser la gestion de votre collection et préserver son histoire.',
     part2:
       'Une des premières problématiques auxquelles vous êtes confronté est la visibilité et la dispersion de vos œuvres entres différents lieux. Qu’elles soient à portée personnelle ou publique, vous devriez toutes les voir immédiatement sous vos yeux, parfaitement en haute qualité, à l’endroit même de votre demeure/galerie.',
     part3:
-      'Spicaro vous permet également de mieux répertorier et mieux traiter chacune de vos œuvres, en ayant une vue d’ensemble détaillée, facilitant ainsi les processus de succession et garantissant la préservation de votre héritage artistique, ajoutant également une convivialité à la tâche.',
-    part4:
-      'Enfin grâce à notre système de digitalisation ultra HD, vous pouvez visualiser en détail chacune de vos œuvres, suivre son état et garantir une nouvelle assurance appropriée pour protéger votre précieux investissement.',
-  },
+      'Spicaro vous permet de répertorier, documenter, sécuriser et fournir une preuve de propriété pour chacune de vos œuvres, facilitant les processus de succession et garantissant la préservation de votre héritage, tout en ajoutant une touche de convivialité.',
   link01: 'La technologie Spicaro',
 
   title03: 'Les fondatrices',
