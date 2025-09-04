@@ -1,7 +1,7 @@
 import AlexandraDescription from '../../components/founders/AlexandraDescription.astro'
 import ChloeDescription from '../../components/founders/ChloeDescription.astro'
 const company = {
-  title: 'Nous digitalisons vos œuvres d’Art',
+  title: 'Nous digitalisons vos œuvres d’Art ',
   description: {
     part1:
       'Spicaro est un service d’accompagnement auprès des collectionneurs d’œuvres d’Art. ',
