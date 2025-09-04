@@ -1,7 +1,7 @@
 const home = {
-  title: 'Spicarisez votre univers',
+  title: 'Spicaro vous accompagne avec sérénité',
   description:
-    'Spicaro offre un service d’accompagnement novateur et haut de gamme d<strong>’unification des œuvres d’Art physiques et de leur jumeau numérique.</strong>',
+    'Spicaro propose un répertoire innovant et sécurisé pour garantir la propriété des œuvres d’Art via la création d’un jumeau numérique.</strong>',
   search: 'Chercher une œuvre, une galerie, un artiste',
   comingSoon: 'Prochainement disponible',
 }
