@@ -32,7 +32,7 @@ const technology = {
     ],
   },
   experience: {
-    title: 'L’experience',
+    title: 'L’expérience',
     items: [
       'Profitez de vos œuvres grâce à notre <strong>galerie 3D</strong>, agencez vos tableaux selon vos désirs.',
 
