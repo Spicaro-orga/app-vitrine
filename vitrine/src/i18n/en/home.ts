@@ -1,7 +1,7 @@
 const home = {
-  title: 'Discover your universe',
+  title: 'Spicaro guides you with serenity',
   description:
-    'Spicaro offers a high-end and innovative accompaniment service which <strong>unifies physical Art works and their digital twins.</strong>',
+    'Spicaro provides an innovative and secure registry to guarantee artwork ownership through the creation of a digital twin.</strong>',
   search: 'Search a work, a gallery, an artist',
   comingSoon: 'Coming Soon',
 }

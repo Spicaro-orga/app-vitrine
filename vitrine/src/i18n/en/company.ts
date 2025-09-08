@@ -3,28 +3,41 @@ import ChloeDescription from '../../components/founders/ChloeDescription.astro'
 const company = {
   title: 'We digitize your Art works',
   description: {
-    part1: 'Spicaro is an accompaniment service for Art work owners.',
-    part2:
-      'We digitize Artworks in very high definition and provide a digital twin.',
-    part3: 'Each physical Artwork is associated with its digital twin.',
+    part1: 'Spicaro is a support service for art collectors. ',
+    part2: 'We digitize artworks in high definition',
+    part3:
+      ' and provide a digital twin in which we integrate all the related documentation: certificates, restorations, exhibition history, proof of ownership, and provenance.',
     part4:
-      'With the aim of integrating restorations, exhibition locations, the Artwork’s history, the Artwork itself, and its context into',
-    part5: 'the digital timeline of the piece.',
+      ' Each artwork is represented by a unique and secure digital copy, ensuring ',
+    part5: 'both traceability and ownership.',
   },
 
   title01:
-    'With Spicaro, enjoy your collection at your fingertips, wherever you are.',
+    'With Spicaro, always keep your collection at hand and create your own exhibitions inside a 3D gallery.',
   description01: {
     part1:
       'As an Art collector, you face various challenges in managing your collection effectively, such as representation, transfer, and insurance. Discover a seamless, innovative, and premium way to optimize the management of your collection and preserve its history.',
     part2:
       'One of the first challenges you face is the visibility and dispersion of your Artworks across different locations. Whether they are for personal or public viewing, you should be able to see them all instantly before your eyes, perfectly in high quality, right in your home/gallery.',
     part3:
-      'Our Spicaro solution also allows you to better catalog and treat each of your Artworks, providing a detailed overview, making inheritance processes easier, and ensuring the preservation of your artistic heritage, adding conviviality to the task.',
-    part4:
-      'Finally, thanks to our ultra HD digitalization system, you can view each of your Artworks in detail, follow its condition, and ensure appropriate new insurance to protect your precious investment.',
+      'Spicaro allows you to catalog, document, secure, and provide proof of ownership for each of your artworks, facilitating inheritance processes and ensuring the preservation of your legacy, while adding a touch of conviviality.',
   },
   link01: 'Spicaro technology',
+
+  title02:
+    'Your Artworks are scattered across multiple locations and the management of your collection is often inefficient.',
+  description02: {
+    part1:
+      'You encounter difficulties regarding the management of your collection, particularly in terms of representation, transmission, sale, and insurance.',
+    part2:
+      'You want to gather, save, and secure your artwork documentation in one place and you are looking for an innovative solution for all these reasons.',
+    part3: 'We have the solution for you with Spicaro:',
+    part4:
+      'Discover a continuous, innovative, and high-end method to optimize the management of your collection while preserving its history.',
+    part5:
+      'All your data and collections are protected thanks to cutting-edge technologies. Your information remains strictly confidential, with reinforced protocols guaranteeing their security and integrity at every step.',
+  },
+
   title03: 'Our founders',
   founders: [
     {
@@ -77,10 +90,10 @@ const company = {
     },
   },
 
-  title02: 'Vision',
-  subtitle02:
+  title04: 'Vision',
+  subtitle04:
     'With our solution, share your collection and its soul, and transmit culture to future generations.',
-  description02: {
+  description04: {
     part1:
       "For a collector, preserving a collection represents a lifetime of work. The works evoke the stages of one's life, the passage of time, and the accompanying joys and sorrows. Thanks to our ultra-high definition digitization solution, we freeze the work in time, preserving its existence.",
     part2:
