@@ -1,6 +1,11 @@
 # Here is better organized gitignore, with clear parts and regex
 # instead of 5 lines for each type of files
 
+vitrine/.vercel
+vitrine/.vercel/
+.vercel/
+.vercel
+
 # compiled output
 dist
 tmp
